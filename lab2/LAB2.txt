@@ -1,0 +1,126 @@
+Variant 11_Filatov P.I.
+
+Code:
+
+MEM2	STORAGE 2
+MEM4 	STORAGE 3
+MEM5	STORAGE 4
+	GENERATE 7,5
+	TRANSFER .5,KK1,KK2
+KK1	SEIZE K1
+	ADVANCE 10,3
+	RELEASE K1
+	TRANSFER .5,KK3,KK4
+KK2	ENTER MEM2
+	SEIZE K2
+	LEAVE MEM2
+	ADVANCE 35,8
+	RELEASE K2
+	TRANSFER .5,KK3,KK4
+KK3	SEIZE K3
+	ADVANCE 30,7
+	RELEASE K3
+	TRANSFER ,KK5
+KK4	ENTER MEM4
+	SEIZE K4
+	LEAVE MEM4
+	ADVANCE 45,5
+	RELEASE K4
+	TRANSFER ,KK5
+KK5	GATE SNF MEM5,OUT
+	ENTER MEM5
+	SEIZE K5
+	LEAVE MEM5
+	ADVANCE 20,5
+	RELEASE K5
+OUT	TERMINATE 1
+	START 100
+	CLEAR
+
+
+report:
+
+
+
+              GPSS World Simulation Report - LAB02.8.1
+
+
+                   Thursday, March 16, 2023 15:06:38  
+
+           START TIME           END TIME  BLOCKS  FACILITIES  STORAGES
+                0.000           1904.335    29        5          3
+
+
+              NAME                       VALUE  
+          K1                          10004.000
+          K2                          10003.000
+          K3                          10006.000
+          K4                          10005.000
+          K5                          10007.000
+          KK1                             3.000
+          KK2                             7.000
+          KK3                            13.000
+          KK4                            17.000
+          KK5                            23.000
+          MEM2                        10000.000
+          MEM4                        10001.000
+          MEM5                        10002.000
+          OUT                            29.000
+
+
+ LABEL              LOC  BLOCK TYPE     ENTRY COUNT CURRENT COUNT RETRY
+                    1    GENERATE           268             0       0
+                    2    TRANSFER           268            76       0
+KK1                 3    SEIZE              135             0       0
+                    4    ADVANCE            135             0       0
+                    5    RELEASE            135             0       0
+                    6    TRANSFER           135            56       0
+KK2                 7    ENTER               57             2       0
+                    8    SEIZE               55             0       0
+                    9    LEAVE               55             0       0
+                   10    ADVANCE             55             1       0
+                   11    RELEASE             54             0       0
+                   12    TRANSFER            54            24       0
+KK3                13    SEIZE               64             0       0
+                   14    ADVANCE             64             1       0
+                   15    RELEASE             63             0       0
+                   16    TRANSFER            63             0       0
+KK4                17    ENTER               45             3       0
+                   18    SEIZE               42             0       0
+                   19    LEAVE               42             0       0
+                   20    ADVANCE             42             1       0
+                   21    RELEASE             41             0       0
+                   22    TRANSFER            41             0       0
+KK5                23    GATE               104             0       0
+                   24    ENTER               96             3       0
+                   25    SEIZE               93             1       0
+                   26    LEAVE               92             0       0
+                   27    ADVANCE             92             0       0
+                   28    RELEASE             92             0       0
+OUT                29    TERMINATE          100             0       0
+
+
+FACILITY         ENTRIES  UTIL.   AVE. TIME AVAIL. OWNER PEND INTER RETRY DELAY
+ K2                  55    0.995      34.435  1      120    0    0     0      2
+ K1                 135    0.706       9.953  1        0    0    0     0      0
+ K4                  42    0.983      44.553  1      121    0    0     0      3
+ K3                  64    0.977      29.064  1      174    0    0     0     34
+ K5                  93    0.963      19.719  1      171    0    0     0      3
+
+
+STORAGE            CAP. REM. MIN. MAX.  ENTRIES AVL.  AVE.C. UTIL. RETRY DELAY
+ MEM2                2    0   0     2       57   1    1.961  0.981    0   76
+ MEM4                3    0   0     3       45   1    2.880  0.960    0   46
+ MEM5                4    0   0     4       96   1    2.704  0.676    0    0
+
+
+CEC XN   PRI          M1      ASSEM  CURRENT  NEXT  PARAMETER    VALUE
+   171    0        1195.967    171     25     26
+
+
+FEC XN   PRI         BDT      ASSEM  CURRENT  NEXT  PARAMETER    VALUE
+   269    0        1907.820    269      0      1
+   120    0        1911.388    120     10     11
+   121    0        1926.919    121     20     21
+   174    0        1940.234    174     14     15
+
