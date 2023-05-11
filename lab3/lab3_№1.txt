@@ -1,0 +1,141 @@
+Вариант 12 Филатов Павел Игоревич
+Задание 1.1
+Код:
+MEM2	STORAGE 2
+MEM4	STORAGE 3
+MEM5	STORAGE 4
+
+	GENERATE 5,3
+	TRANSFER .5,KK1,KK2
+
+KK1	QUEUE QU1
+	SEIZE K1
+	DEPART QU1
+	ADVANCE 15,6
+	RELEASE K1
+	TRANSFER ,OUT1
+
+KK2	QUEUE QU2
+	ENTER MEM2
+	DEPART QU2
+	ADVANCE 20,5
+	LEAVE MEM2
+
+OUT1	TRANSFER .5,KK3,KK4
+
+KK3	QUEUE QU3
+	SEIZE K3
+	DEPART QU3
+	ADVANCE 35,8
+	RELEASE K3
+	TRANSFER ,OUT2
+
+KK4	QUEUE QU4
+	ENTER MEM4
+	DEPART QU4
+	ADVANCE 20,4
+	LEAVE MEM4
+
+OUT2	QUEUE QU5
+	ENTER MEM5
+	DEPART QU5
+	ADVANCE 10,3
+	LEAVE MEM5
+
+OUT3	TERMINATE	1
+	START 500
+
+Отчёт:
+
+
+
+              GPSS World Simulation Report - 1.2.1
+
+
+                   Thursday, May 11, 2023 15:32:30  
+
+           START TIME           END TIME  BLOCKS  FACILITIES  STORAGES
+                0.000           4356.189    31        2          3
+
+
+              NAME                       VALUE  
+          K1                          10005.000
+          K3                          10008.000
+          KK1                             3.000
+          KK2                             9.000
+          KK3                            15.000
+          KK4                            21.000
+          MEM2                        10000.000
+          MEM4                        10001.000
+          MEM5                        10002.000
+          OUT1                           14.000
+          OUT2                           26.000
+          OUT3                           31.000
+          QU1                         10004.000
+          QU2                         10003.000
+          QU3                         10007.000
+          QU4                         10006.000
+          QU5                         10009.000
+
+
+ LABEL              LOC  BLOCK TYPE     ENTRY COUNT CURRENT COUNT RETRY
+                    1    GENERATE           889             0       0
+                    2    TRANSFER           889             0       0
+KK1                 3    QUEUE              463           165       0
+                    4    SEIZE              298             0       0
+                    5    DEPART             298             0       0
+                    6    ADVANCE            298             1       0
+                    7    RELEASE            297             0       0
+                    8    TRANSFER           297             0       0
+KK2                 9    QUEUE              426             6       0
+                   10    ENTER              420             0       0
+                   11    DEPART             420             0       0
+                   12    ADVANCE            420             2       0
+                   13    LEAVE              418             0       0
+OUT1               14    TRANSFER           715             0       0
+KK3                15    QUEUE              336           212       0
+                   16    SEIZE              124             0       0
+                   17    DEPART             124             0       0
+                   18    ADVANCE            124             1       0
+                   19    RELEASE            123             0       0
+                   20    TRANSFER           123             0       0
+KK4                21    QUEUE              379             0       0
+                   22    ENTER              379             0       0
+                   23    DEPART             379             0       0
+                   24    ADVANCE            379             1       0
+                   25    LEAVE              378             0       0
+OUT2               26    QUEUE              501             0       0
+                   27    ENTER              501             0       0
+                   28    DEPART             501             0       0
+                   29    ADVANCE            501             1       0
+                   30    LEAVE              500             0       0
+OUT3               31    TERMINATE          500             0       0
+
+
+FACILITY         ENTRIES  UTIL.   AVE. TIME AVAIL. OWNER PEND INTER RETRY DELAY
+ K1                 298    0.997      14.572  1      582    0    0     0    165
+ K3                 124    0.992      34.852  1      318    0    0     0    212
+
+
+QUEUE              MAX CONT. ENTRY ENTRY(0) AVE.CONT. AVE.TIME   AVE.(-0) RETRY
+ QU2                12    6    426     41     3.847     39.334     43.523   0
+ QU1               166  165    463      1    86.401    812.917    814.677   0
+ QU4                 3    0    379    316     0.061      0.707      4.252   0
+ QU3               212  212    336      1   104.400   1353.533   1357.573   0
+ QU5                 1    0    501    501     0.000      0.000      0.000   0
+
+
+STORAGE            CAP. REM. MIN. MAX.  ENTRIES AVL.  AVE.C. UTIL. RETRY DELAY
+ MEM2                2    0   0     2      420   1    1.898  0.949    0    6
+ MEM4                3    2   0     3      379   1    1.740  0.580    0    0
+ MEM5                4    3   0     4      501   1    1.133  0.283    0    0
+
+
+FEC XN   PRI         BDT      ASSEM  CURRENT  NEXT  PARAMETER    VALUE
+   890    0        4356.234    890      0      1
+   877    0        4356.772    877     12     13
+   871    0        4358.247    871     29     30
+   581    0        4372.795    581     24     25
+   582    0        4375.524    582      6      7
+   879    0        4378.784    879     12     13
+   318    0        4380.567    318     18     19
